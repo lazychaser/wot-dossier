@@ -1,0 +1,44 @@
+{
+    "name": "kalnoy/wot-dossier",
+    "description": "World Of Tanks dossier tool",
+    "keywords": ["wot", "dossier"],
+    "licence": "MIT",
+
+    "authors": [
+        {
+            "name": "Aleksander Kalnoy",
+            "email": "lazychaser@gmail.com"
+        }
+    ],
+
+    "require": {
+        "illuminate/support": "4.*",
+        "phalynx/dossier-to-json": "0.8.9"
+    },
+
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "phalynx/dossier-to-json",
+                "version": "0.8.9",
+                "dist": {
+                    "url": "https://github.com/Phalynx/WoT-Dossier-Cache-to-JSON/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ],
+
+    "autoload": {
+        "psr-0": {
+            "Kalnoy\\Wot\\Dossier\\": "src/"
+        },
+
+        "files": [ 
+            "src/helpers.php"
+        ]
+    },
+
+    "minimum_stability": "dev"
+}
