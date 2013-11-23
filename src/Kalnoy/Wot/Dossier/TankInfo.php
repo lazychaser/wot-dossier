@@ -72,6 +72,7 @@ class TankInfo extends BaseObject {
         'title', 
         'short_title', 
         'icon',
+        'is_premium',
     );
 
     /**
@@ -216,7 +217,7 @@ class TankInfo extends BaseObject {
         $tank->tier = $data['tier'];
         $tank->title = $data['title'];
         $tank->is_premium = (bool)$data['premium'];
-        $tank->icon = $data['icon'];
+        $tank->icon = $data['icon_orig'];
 
         if (isset($data['title_short']))
         {
