@@ -235,7 +235,8 @@ class PythonConverter implements ConverterInterface {
         {
             $stats = $data->$field;
 
-            if ($data->common->basedonversion >= 65 && isset($fieldExtra))
+            if ($data->common->basedonversion >= 65 && 
+                isset($fieldExtra) && isset($data->{$fieldExtra}))
             {
                 $extra = $data->$fieldExtra;
             }

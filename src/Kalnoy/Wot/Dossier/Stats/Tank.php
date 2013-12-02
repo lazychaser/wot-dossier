@@ -35,6 +35,13 @@ class Tank extends Base {
     public $created_at = 0;
 
     /**
+     * The total duration of battles in minutes.
+     *
+     * @var int
+     */
+    public $battle_duration;
+
+    /**
      * The last time when user updated a tank.
      *
      * @var  int
@@ -68,6 +75,7 @@ class Tank extends Base {
         'info',
         'created_at',
         'updated_at',
+        'battle_duration',
         'last_played_at',
         'battles',
         'battles_old',
@@ -78,6 +86,7 @@ class Tank extends Base {
     protected static $mergeFields = array(
         'battles',
         'battles_old',
+        'battle_duration',
         'mileage',
         'trees_cut',
     );
@@ -87,6 +96,13 @@ class Tank extends Base {
         parent::__construct($version);
 
         $this->info = $info;
+    }
+
+    public function calcAverageBattleDuration()
+    {
+        return $this->battles > 0 
+            ? (float)$this->battle_duration / $this->battles 
+            : null;
     }
 
     /**
@@ -101,7 +117,7 @@ class Tank extends Base {
         
         return $battles > 0 
             ? (float)$this->mileage / $battles 
-            : 0;
+            : null;
     }
 
     /**
@@ -114,7 +130,7 @@ class Tank extends Base {
     {
         return $this->battles > 0 
             ? (float)$this->trees_cut / $this->battles 
-            : 0;
+            : null;
     }
 
     /**

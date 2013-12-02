@@ -347,7 +347,7 @@ class Battle extends Base {
 
     public function calcAverageTier()
     {
-        return $this->battles == 0 ? 0 : (float)$this->tier / $this->battles;
+        return $this->battles == 0 ? null : (float)$this->tier / $this->battles;
     }
 
     public function calcWinRate()
@@ -363,7 +363,7 @@ class Battle extends Base {
     public function calcHitRate()
     {
         return $this->shots == 0
-            ? 0
+            ? null
             : (float)$this->hits / $this->shots;
     }
 
@@ -415,14 +415,14 @@ class Battle extends Base {
     public function calcPiercingEfficiency()
     {
         return $this->hits == 0
-            ? 0
+            ? null
             : (float)$this->pierced_hits / $this->hits;
     }
 
     public function calcArmorEfficiency()
     {
         return  $this->received_hits == 0
-            ? 0
+            ? null
             : 1 - (float)$this->received_pierced_hits / $this->received_hits;
     }
 
