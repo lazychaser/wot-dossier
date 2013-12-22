@@ -13,7 +13,7 @@
 
     "require": {
         "illuminate/support": "4.*",
-        "phalynx/dossier-to-json": "0.8.9"
+        "phalynx/dossier-to-json": "0.8.10"
     },
 
     "repositories": [
@@ -21,7 +21,7 @@
             "type": "package",
             "package": {
                 "name": "phalynx/dossier-to-json",
-                "version": "0.8.9",
+                "version": "0.8.10",
                 "dist": {
                     "url": "https://github.com/Phalynx/WoT-Dossier-Cache-to-JSON/archive/master.zip",
                     "type": "zip"
@@ -35,7 +35,7 @@
             "Kalnoy\\Wot\\Dossier\\": "src/"
         },
 
-        "files": [ 
+        "files": [
             "src/helpers.php"
         ]
     },
